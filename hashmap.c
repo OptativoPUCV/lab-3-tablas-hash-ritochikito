@@ -46,6 +46,33 @@ int is_equal(void *key1, void *key2)
 
 void insertMap(HashMap *map, char *key, void *value)
 {
+    long index = hash(key, map->capacity);
+    Pair *pair = createPair(key, value);
+    if (map->buckets[index] == NULL)
+    {
+        map->buckets[index] = pair;
+        map->size++;
+    }
+    else
+    {
+        Pair *aux = map->buckets[index];
+        while (aux != NULL)
+        {
+            if (is_equal(aux->key, key))
+            {
+                aux->value = value;
+                return;
+            }
+            aux = aux->next;
+        }
+        pair->next = map->buckets[index];
+        map->buckets[index] = pair;
+        map->size++;
+    }
+    // if (map->size > map->capacity * 0.75)
+    // {
+    //     enlarge(map);
+    // }
 }
 
 void enlarge(HashMap *map)

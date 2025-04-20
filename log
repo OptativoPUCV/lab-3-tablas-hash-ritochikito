@@ -21,3 +21,20 @@ Sun, Apr 20, 2025  2:38:18 PM:
  tests:  1|5
 total_score: 10/70
 007a922
+Sun, Apr 20, 2025  2:48:41 PM: 
+ hashmap.c | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+Compilation failed
+In file included from test.c:4:
+hashmap.c: In function 'insertMap':
+hashmap.c:66:22: error: 'Pair' has no member named 'next'
+   66 |             aux = aux->next;
+      |                      ^~
+hashmap.c:68:13: error: 'Pair' has no member named 'next'
+   68 |         pair->next = map->buckets[index];
+      |             ^~
+test.c: At top level:
+test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+ff71e4c
