@@ -1,0 +1,14 @@
+Sun, Apr 20, 2025  2:25:01 PM: 
+ hashmap.c | 53 ++++++++++++++++++++++++++++-------------------------
+ 1 file changed, 28 insertions(+), 25 deletions(-)
+Compilation failed
+test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Werror=attributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+In file included from test.c:4:
+hashmap.c: In function 'createMap':
+hashmap.c:58:1: error: control reaches end of non-void function [-Werror=return-type]
+   58 | }
+      | ^
+cc1.exe: all warnings being treated as errors
+eeef3b7
