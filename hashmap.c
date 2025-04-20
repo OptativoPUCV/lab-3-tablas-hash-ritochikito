@@ -69,10 +69,10 @@ void insertMap(HashMap *map, char *key, void *value)
         map->buckets[index] = pair;
         map->size++;
     }
-    // if (map->size > map->capacity * 0.75)
-    // {
-    //     enlarge(map);
-    // }
+    if (map->size > map->capacity * 0.75)
+    {
+        enlarge(map);
+    }
 }
 
 void enlarge(HashMap *map)
